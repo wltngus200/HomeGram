@@ -1,3 +1,5 @@
+package com.green.practiceAlone;
+
 import java.util.Scanner;
 
 public class Notion {

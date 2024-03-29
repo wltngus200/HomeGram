@@ -1,3 +1,5 @@
+package com.green.practiceAlone;
+
 public class MakeAMat_Alone {
     public static void main(String[] args){
         int H = 5;

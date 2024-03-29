@@ -1,3 +1,5 @@
+package com.green.practiceAlone;
+
 public class EVERYTHING {
     public static void main(String[] args){
         String name="홍길동";

@@ -5,3 +5,13 @@ public class Quest04_StuCare {
 
     }
 }
+class Member{
+    /*id
+    pw
+    addres
+    email
+    */
+    Member(int id,String pw,){
+
+    }
+}

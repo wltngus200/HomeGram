@@ -1,137 +1,237 @@
 package com.green.video;
 
+import java.util.GregorianCalendar;//뭔차인지는 모르겠다 상수 사용?이랬나
 import java.util.Scanner;
 
-public class FreeOnline06 {
-    public static void main(String[] args) {
-        //매서드
-        //★근데 메서드 맨 밑에 있어도 위로 불러올 수 있네
-        //★★★★★★★★★★필기 포인트가 될만한 곳에 별을 찍었다
+import static java.util.Calendar.*;
 
-        //배열 활용해 사용자에게 키 몸무게 나이를 입력받아 가장 큰 값
+public class FreeOnline06 {
+    public class Practice08_class {
+        public static void main(String[] args) {
+
+        /*
+        Account chulsoo=new Account("철수","123456", 1000);
+        Account younghee=new Account("영희","654321", 200);
+        //철수라는 개체 어카운드 클래스를 이용해서 선언, 생성자 호출해 초기값(괄호 안)
+
+        chulsoo.withdraw(200);//200원 인출
+        younghee.deposit(100);//100원 입금?
+
+        System.out.println("철수의 계좌");
+        System.out.println("계좌명의: "+chulsoo.getName());//메소드 호출
+        System.out.println("계좌번호: "+chulsoo.getNo());
+        System.out.println("예금잔고: "+chulsoo.getBalance());
+
+        System.out.println("영희의 계좌");
+        System.out.println("계좌명의: "+younghee.getName());
+        System.out.println("계좌번호: "+younghee.getNo());
+        System.out.println("예금잔고: "+younghee.getBalance());
+        }
+        */
+
+
         Scanner scan = new Scanner(System.in);
 
+        String[] wd = {"일", "월", "화", "수", "목", "금", "토"};
+
         /*
-        int[] height = new int[3];
-        int[] weight = new int[3];
-        int[] age = new int[3];
+        System.out.println("생일을 양력으로 입력하십시오: ");
+        System.out.print("년: ");
+        int y = scan.nextInt();
+        System.out.print("월: ");
+        int m = scan.nextInt();
+        System.out.print("일: ");
+        int d = scan.nextInt();
 
-        for (int i = 0; i < 3; i++) {
-            System.out.print("[" + (i + 1) + "]");
-            System.out.print("신장:");
-            height[i] = scan.nextInt();
+        Day birthday = new Day(y, m, d);
+        //Day 클래스에 birth 객체 = 생성자(값=초기값 세팅)
+        //생성자=p.291
 
-            System.out.print("체중:");
-            weight[i] = scan.nextInt();
+        System.out.println("당신의 생일은 " + birthday.getYear() + " " +
+                birthday.getMonth() + "월 " + birthday.getDate() + "일 " + wd[birthday.dayOfWeek()] + "요일입니다.");
 
-            System.out.print("나이:");
-            age[i] = scan.nextInt();
-        }
+        */
+
+            //클래스 안 값들 비교
+        /*int y,m,d;
+        System.out.println("날짜 1을 입력하세요");
+        System.out.println("년: ");
+        y=scan.nextInt();
+        System.out.println("월: ");
+        m=scan.nextInt();
+        System.out.println("일: ");
+        d=scan.nextInt();
+        Day day1=new Day(y,m,d);
+        //Day 클래스형 객체
+
+        System.out.println("날짜 2를 입력하세요");
+        System.out.println("년: ");
+        y=scan.nextInt();
+        System.out.println("월: ");
+        m=scan.nextInt();
+        System.out.println("일: ");
+        d=scan.nextInt();
+        Day day2=new Day(y,m,d);
+        */
+
+            //if(day1==day2) //객체와 객체를 바로 비교하기는 불가능
+            //그 안의 값들을 일일히 비교해야 한다
         /*
-        int maxHeight = height[0];
-        for (int h = 0; h < 3; h++) {
-            //0으로 시작해도 상관은 없지만 0으로 세팅 되어있으니 낭비 ㄴㄴ
-            if (height[h] > maxHeight) {
-                maxHeight = height[h];
-            }
-        }//아무리 첨자가 3이라지만 굳이 2번을 따로 쓴다고?
+        바로 아래의 메소드가 실행될 때 이 부분은 필요 없어짐
+        if (day1.getYear()==day2.getYear()&&
+                day1.getMonth()==day2.getMonth()&&
+                day1.getDate()==day2.getDate())*/
+            /*
+            System.out.println("같습니다");
 
-        int maxWeight = weight[0];
-        for (int w = 0; w < 3; w++) {
-            if (weight[w] > maxWeight) {
-                maxWeight = weight[w];
-            }
+        } else {
+            System.out.println("다릅니다");
         }
+        */
+            //클래스형 객체의 배열
 
-        int maxAge = age[0];
-        for (int a = 0; a < 3; a++) {
-            if (age[a] > maxAge) {
-                maxAge = age[a];
-            }
+
+        /*
+        System.out.print("날짜는 몇 개?");
+        int n = scan.nextInt();
+
+        Day[] a = new Day[n];//Day 클래스형 배열로 //배열만 만들어짐
+        //a 클래스형 객체의 배열
+        for (int i = 0; i < a.length; i++) {
+            a[i] = new Day(2017, 10, 15);//초기값 생성
+            //객체를 생성하지 않고 요소에 바로 셋을 하면 에러
+            //배열요소에 바로 셋 a[i].set(2017, 10, 20);//에러 발생
+            //클래스형 인스턴스 배열을 만들 때에는 각각의 클래스 객체를 배열 요소에 생성 후 사용
+            //뭔소리여??
+        }
+        for (int i = 0; i < a.length; i++) {//입력값 화면 표시
+            System.out.print("a["+i+"]="+
+                    a[i].getYear() + "년 " +
+                    a[i].getMonth() + "월 " +
+                    a[i].getDate() + "일(" +
+                    wd[a[i].dayOfWeek()] + ")");
+
         }*/
+            GregorianCalendar today=new GregorianCalendar();
+            //현재 날짜를 구함 = 초기값은 오늘 날짜
 
-    /*
-    int maxHeight=max(height[0],height[1],height[2]);
-    int maxWeight=max(weight[0],weight[1],weight[2]);
-    int maxAge=max(age[0],age[1],age[2]);
-    //★max()메소드 명과 함수값으로 호출 메소드는 괄호!
+            System.out.printf("%04d년 %02d월 %02d일입니다.\n",
+                    today.get(YEAR),today.get(MONTH)+1,today.get(DATE));
+            //month는 0부터 시작하기 때문
+            //맨 위에 import static이랑 .*추가
 
-    System.out.printf("신장의 최대값은 %d입니다.\n", maxHeight);
-    System.out.printf("체중의 최대값은 %d입니다.\n", maxWeight);
-    System.out.printf("나이의 최대값은 %d입니다.\n", maxAge);
-    //졸릴때 코딩은 해롭다.. 함수명 안 바꾸기와 부등호 틀리기의 연속
-    */
-
-    /*
-    System.out.println("a의 b 제곱을 시작합니다.");
-    System.out.print("실수 a:");
-    double a=scan.nextDouble();
-    System.out.print("실수 b:");
-    int b=scan.nextInt();
-
-    System.out.println("a의 b승은"+ power(a,b) +"입니다.");
-
-    */
-
-    System.out.println("좌하변이 직각인 직각삼각형을 표시합니다.");
-    System.out.print("몇단:");
-    int n = scan.nextInt();
-
-    for (int i = 1; i <= n; i++) {//1~사용자의 입력값 n까지
-        putStars(i);//점점 1개씩 증가하고 줄을 내리는 메서드
-        //for을 왜 바깥에 한번 설정하지??
-        //메소드도 복잡한데 이걸 이케 한다고??
-        //여기 n이랑 메소드 안의 n이랑 다르잖아.. 여기 n이 i잖아..
-        //내거랑 비교하려고 했는데 차마 너무 달라서 비교도 못하겠다.
-        System.out.println();
+        }
+        //위의 각 값을 비교하는 것을 메소드로
+        static boolean compDay (Day d1, Day d2){ //Day=클래스 d1,2=객체
+            //배열처럼 클래스 객체를 인수로서 받아왔다?
+            //메소드 인수로 배열뿐만 아니라 클래스의 객체를 인수로 받기 가능
+            return (d1.getYear() == d2.getYear() &&
+                    d1.getMonth() == d2.getMonth() &&
+                    d1.getDate() == d2.getDate());
+        }
     }
 
 
-}
+    class Account2 {//왜 이렇게 되는 거지??//클래스가 2개 뜨네
+        //배열을 활용해 같은 종류에 묶어 다룸 지금은 다른 종류의 데이터 하나의 클래스로 묶어 관리
+        //계좌명 계좌번호 예금정보
+        private String name;//이름
+        private String no;//계좌번호
+        private long balance;//예금잔고
+        //멤버변수 선언
+        //private로 외부 클래스에서 접근할 수 없다.
 
+        //생성자=객체를 생성할때 초기값
+        //어카운트 클래스
+        Account2(String n, String num, long z) {
+            name = n;
+            no = num;
+            balance = z;
+        }
+        //멤버 변수에다가 사용자가 입력한 값을 초기값으로 생성자 선언
 
-//-------[메소드 라인]--------------------------------
-//새로운 메서드
-static int max(int a,int b,int c){
-    //★-----메서드 명과 함수값------
-    int max=a;
-    if(b>max){max=b;}//세미콜론 위치도 까먹네
-    if(c>max){max=c;}
-    return max;
-}//메서드 완성! 최대값 찾는 메서드!
+        String getName() {
+            return name;
+        }
 
+        String getNo() {
+            return no;//계좌번호를 가져오는 메소드
+        }
 
-//메소드를 이용한 거듭제곱
-static double power(double x,int n){
-    //리턴값 power=더블, 입력받은 x의 값이 실수형, 제곱=정수n //세미콜론은?
-    double t=1.0;//결과값을 넘겨받기 위해 + 초기값 투입
-    for(int i=1;i<=n;i++){
-        t*=x;//t=x*x(x의 n승)// (제곱을 해서 t라는 빈 박스에 넣음)
+        long getBalance() {
+            return balance;
+        }
+
+        void deposit(long k) {//잔고
+            balance += k;
+        }
+
+        void withdraw(long k) {//출금
+            balance -= k;
+
+        }
     }
-    return t;//x의 n승
-}
-//제곱 메서드의 실제 구현
 
 
-//별을 출력하는 메서드 직각 삼각형
+    //데이 새로운 클래스
+    class Day {//클래스
+        private int year;//멤버변수
+        private int month;
+        private int date;
 
-/*static int star(int star){//void도 빼먹었네..는 위에도 없네?
-//가벼운 마음으로 일단 별을 찍는다고 상상해보자.
-star=7;
-for(int i=0;i<star;i++){
-    for(int j=0;j<=i;j++) {
-        System.out.print("*");
-    }System.out.println()//오늘자 수현이가 까먹은 거
-    return star;
-}
-}*///혼자 만들어본 별찍기 개같이 실패! int i,j도 설정했어야하나?
+        Day(int year, int month, int date) {//생성자=멤버변수와 이름은 같으나 다름
+            //year=year; 틀림 멤버변수가 이 인수를 넘겨받은 값을 어사인 하려고
+            this.year = year;//멤버변수=인수
+            this.month = month;
+            this.date = date;//초기값을 설정하는 생성자
+        }
 
-//별찍기 찐
-static void putStars(int n){
-    //★리턴하는 값이 있으면 해당 타입 기술. 없으면 void형
-    while (n-->0){//★n이 1씩 감소하고, 그게 0보다 큰 동안(이런 표기도 가능하네)
-        //입력받은 정수 n값만큼 별을 출력
-        System.out.print("*");
+        //메소드들
+        int getYear() {
+            return year;
+        }
+
+        int getMonth() {
+            return month;
+        }
+
+        int getDate() {
+            return date;
+        }//여기까지 값을 내어주는 것
+
+        //아래부터는 값을 입력받아 새로 입력
+        void setYear(int year) {//
+            this.year = year;//멤버변수=인수
+        }
+
+        void setMonth() {
+            this.month = month;
+        }
+
+        void setdate() {
+            this.date = date;
+        }
+
+        void set(int year, int month, int date) {//메소드 연월일을 한번에 바꿀 때
+            this.year = year;
+            this.month = month;
+            this.date = date;
+        }
+
+        //요일 표기
+        int dayOfWeek() {//메서드
+            int y = year;
+            int m = month;
+            if (m == 1 || m == 2) {
+                y--;
+                m += 12;
+            }
+            return (y + y / 4 - y / 100 + y / 400 + (13 * m + 8) / 5 + date) % 7; //0=일요일~
+        }
+
     }
-}
+/*
+요약: 클래스 선언, 그의 객체 선언, 초기값 세팅, 메소드 호출해서 그 안의 멤버변수의 값을 불러옴
+바꿔온 값은 외부에 접근할 수 있는 메서드를 활용해서 값을 표시
+ */
 }

@@ -11,7 +11,7 @@ class Member{
     addres
     email
     */
-    Member(int id,String pw,){
+    Member(int id,String pw){
 
     }
 }

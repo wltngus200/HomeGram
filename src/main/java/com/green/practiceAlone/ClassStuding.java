@@ -14,7 +14,7 @@ public class ClassStuding {
         System.out.print(kim.partyday()==today);
         for(int i=0;i<member.length;i++) {
             if (kim.partyday()==today) {
-                //kim.party해야 생일 날짜만 나옴
+                //kim.party해야 생일 날짜만
                 //이 부분을 각 멤버 별로 설정해서
                 System.out.printf("happy birthday! %s\n", member[i]);
             }

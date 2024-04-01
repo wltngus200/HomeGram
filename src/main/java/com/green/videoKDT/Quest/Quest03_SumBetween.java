@@ -19,7 +19,7 @@ public class Quest03_SumBetween {
         int[] numArr=new int[(num2-num1)+1];
         for(int i=0;i<numArr.length;i++){
             sum+=num1;
-            numArr[i]=num1++;
+            numArr[i]=num1++;//괄호
         }
         System.out.printf("결과: %s\n",Arrays.toString(numArr));
         System.out.printf("합계: %d\n",sum);

@@ -2,13 +2,14 @@ package com.green.videoKDT.Quest;
 
 public class Quest05_notyet {
     public static void main(String[] args){
-        /*Whale w = new Whale();
+        Whale w = new Whale();
         w.setName("고래");
         w.setAge(5);
-        w.setSwim(true);
+        //System.out.print(w);
+        //w.setSwim(true);
         System.out.println("이름 : "+w.getName());
         System.out.println("나이 : "+w.getAge());
-        System.out.println("수영여부 : "+w.getAge());*/
+        System.out.println("수영여부 : "+w.getAge());
     }
 }
 class Animal{
@@ -33,4 +34,13 @@ class Animal{
         public String getSex(){
             return sex;
         }
+}
+class Whale extends Animal{
+    boolean swim;
+    boolean getSwim(){
+        return swim;
+    }
+    boolean setSwim(){
+        return swim;
+    }
 }

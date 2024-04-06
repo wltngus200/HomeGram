@@ -16,6 +16,7 @@ public class Quest03_SumBetween {
             num1 = num2;
             num2 = tmp;
         }
+        //방법 1
         int[] numArr=new int[(num2-num1)+1];
         for(int i=0;i<numArr.length;i++){
             sum+=num1;
@@ -23,5 +24,18 @@ public class Quest03_SumBetween {
         }
         System.out.printf("결과: %s\n",Arrays.toString(numArr));
         System.out.printf("합계: %d\n",sum);
+        System.out.println("----------------");
+
+        //방법 2
+        int sum2=numArr[0];
+        System.out.print("결과: "+numArr[0]);
+        for(int i=1;i<numArr.length;i++){
+            System.out.printf(", %d",numArr[i]);
+            sum2+=numArr[i];
+        }System.out.println();
+        System.out.println("합계: "+sum2);
+
+
+
     }
 }

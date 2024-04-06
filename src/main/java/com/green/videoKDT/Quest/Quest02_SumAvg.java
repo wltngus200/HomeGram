@@ -18,6 +18,5 @@ public class Quest02_SumAvg {
             }
         }System.out.printf("합계는 %d입니다. 평균은 %d입니다.\n",sum,sum/time);
 
-
     }
 }

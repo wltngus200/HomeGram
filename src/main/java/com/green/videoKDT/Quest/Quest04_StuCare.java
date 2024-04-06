@@ -4,7 +4,6 @@ public class Quest04_StuCare {
     public static void main(String[] args){
         Member person=new Member(12345,"abcde","서울특별시 강남구 역삼동","student@school.com");
         person.result();
-
     }
 }
 class Member{
@@ -27,5 +26,4 @@ class Member{
         System.out.printf("Address: %s\n",address);
         System.out.printf("Email: %s\n",email);
     }
-
 }

@@ -34,8 +34,5 @@ public class Quest03_SumBetween {
             sum2+=numArr[i];
         }System.out.println();
         System.out.println("합계: "+sum2);
-
-
-
     }
 }

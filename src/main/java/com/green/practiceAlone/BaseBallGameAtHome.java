@@ -5,31 +5,34 @@ import java.util.Scanner;
 public class BaseBallGameAtHome {
     public static void main(String[] args) {
         int answer, user;//컴퓨터의 값, 사용자의 값
-        int strike=0, ball=0;
+        int strike, ball;
 
         do {
             answer = (int) (Math.random() * 1000);//각 자리가 모두 다르고 세자리수
         } while (!(answer > 100 && overlap(answer)));
-        System.out.printf("정답: %d\n",answer);//임시
 
+        int turn=10;
         while(true){
             user=input();
-            if(user==answer){break;}
-            else{String user_copy=String.valueOf(user);
-            String answer_copy=String.valueOf(answer);
-            for(int i=0;i<answer_copy.length();i++) {
-                strike-=strike;
-                ball-=ball;
-                int num = answer_copy.indexOf(user_copy.charAt(i));
-                if (num >= 0&&num == i) {
-                    strike++;
-                } else if (num >= 0) {
-                    ball++;
-                }
-            }
-            }System.out.printf("%d: %d strike, %d ball, %d out\n",user,strike,ball,(int)(Math.log10(user)+1)-(strike+ball));
-        }
+            if(user==answer){
+                System.out.println("정답입니다.");
+                break;
+            } else{
+                String user_copy=String.valueOf(user);
+                String answer_copy=String.valueOf(answer);
+                int i=0; strike=0; ball=0;
+                for(;i<answer_copy.length();i++) {
+                    int num = answer_copy.indexOf(user_copy.charAt(i));
+                    if (num >= 0&&num == i) {strike++;}
+                    else if (num >= 0) {ball++;}
+
+                }turn--;
+            }System.out.printf("%d: %d strike, %d ball, %d out\n",
+                    user,strike,ball,(int)(Math.log10(user)+1)-(strike+ball));
+            System.out.printf("%s[남은 턴: %d]\n","       ",turn);
+        }System.out.printf("answer: %d",answer);
     }
+
     static int input() {
         Scanner scan=new Scanner(System.in);
         int num;

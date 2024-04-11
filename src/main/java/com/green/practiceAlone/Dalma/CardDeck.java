@@ -28,21 +28,15 @@ public class CardDeck {
         for(Card c:cards)
         System.out.println(c);
     }
-    void suffle(){
-        for(int i=0;i<cards.size();i++){
+    public Card drawCard(){//섞기보단 랜덤으로 출력한다.
         int random=(int)(Math.random()*cards.size());
-        Card tmp=cards.get(random);
-        cards.remove(cards.get(random));
-        cards.add(tmp);//발상은 좋았으나 골고루 섞이지 않음
-        //cards.get(i)=tmp 는 빨간줄 왜???
-        }
+        return cards.remove(random);//지우면서 리턴
     }
 }
 class CardDeckTest{
     public static void main(String[] args){
     CardDeck cd=new CardDeck();
     //cd.showCards();
-    cd.suffle();
     System.out.println("-----------------------");
     cd.showCards();
     }

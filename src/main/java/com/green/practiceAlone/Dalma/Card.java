@@ -3,9 +3,9 @@ package com.green.practiceAlone.Dalma;
 import java.util.List;
 
 public class Card {
-    private String shape;
-    private String number;
-    private boolean color;//t=black f=red
+    private final String shape;
+    private final String number;
+    private final boolean color;//t=black f=red
 
     //카드가 가지는 속성들 모양 색 번호 각각의 객체마다 고유한 성질을 가진다.
     Card(String shape, String number, boolean color) {
@@ -15,6 +15,24 @@ public class Card {
         //초기화를 하면서 속성들에 어떠한 값을 넣을 지 정할 수 있다
         //>>카드덱 클래스(파일)
     }
+    public String getShape(){
+        return this.shape;
+    }
+    public String getNumber(){
+        return this.number;
+    }
+    public boolean getColor(){
+        return this.color;
+    }
+    public int checknum(){
+        return switch(this.number){
+            case "A"->1;
+            case "K"->13;
+            case "Q"->12;
+            case "J"->11;
+            default->Integer.parseInt(number);
+        };
+    }
 
     @Override
     public String toString() {
@@ -23,6 +41,6 @@ public class Card {
 }
 class CardTest{
     public static void main(String[] args){
-
+        Card card=new Card("Clover","A",true);
     }
 }

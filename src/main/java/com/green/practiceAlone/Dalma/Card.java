@@ -24,6 +24,8 @@ public class Card {
     public boolean getColor(){
         return this.color;
     }
+
+
     public int checknum(){
         return switch(this.number){
             case "A"->1;
@@ -42,5 +44,6 @@ public class Card {
 class CardTest{
     public static void main(String[] args){
         Card card=new Card("Clover","A",true);
+        System.out.println(card);
     }
 }

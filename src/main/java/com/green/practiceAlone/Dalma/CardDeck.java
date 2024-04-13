@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CardDeck {
     String[] shape={"Heart","Diamond","Spade","Clover"};
-    boolean color=false;// 카드객체와 중복. 어느 값이 들어갔는지 모르겠지만 둘 중 어느 쪽을 지워도 에러.
+    boolean color;// 카드객체와 중복. 어느 값이 들어갔는지 모르겠지만 둘 중 어느 쪽을 지워도 에러.
     private List<Card> cards;//카드라는 객체를 담는 리스트 생성 카드를 여러개 담는 것이 카드덱의 속성
 
     public CardDeck(){
@@ -37,6 +37,7 @@ class CardDeckTest{
     public static void main(String[] args){
     CardDeck cd=new CardDeck();
     //cd.showCards();
+
     System.out.println("-----------------------");
     cd.showCards();
     }

@@ -32,21 +32,20 @@ public class KindCard {
 }
 class KindCardTest{
     public static void main(String[] args){
-        Card c1=new Card("Clover","A",true);
-        Card c2=new Card("Clover","2",true);
-        Card c3=new Card("Clover","3",true);
-        Card c4=new Card("Spade","3",true);
-        Card c5=new Card("Heart","A",false);
+        Card c1=new Card("Clover", "A",true);
+        Card c2=new Card("Clover", "2",true);
+        Card c3=new Card("Clover", "3",true);
+        Card c4=new Card("Spade", "3",true);
+        Card c5=new Card("Heart", "A",false);
 
         KindCard kc=new KindCard();
-        List<Card> onekind=new ArrayList<>();
-
         kc.atok(c2);//첫 값으로 2를 넣었을 때
         kc.atok(c1);//첫 값으로 A를 넣었을 때
         kc.atok(c3);//모양은 같지만 숫자가 맞지 않을 때
         kc.atok(c2);//모양도 같고 바로 다음 숫자일 때
         kc.atok(c3);//모양은 같지만 숫자가 맞지 않을 때
-        kc.atok(c4);//숫자는 다음 숫자지만 모양이 다를 때
+        kc.atok(c4);//숫자는 맞고 모양이 맞지 않을 때
         kc.atok(c5);//모양도 숫자도 맞지 않는 값을 넣을 때
+
     }
 }

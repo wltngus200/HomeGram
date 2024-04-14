@@ -20,8 +20,10 @@ public class Stack {
                 cards.add(cd.drawCard());
             }cardspot.add(cards);
         }
-        for(int i=0;i<ROW;i++){
-            System.out.println(cardspot.get(i));
+        for(int i=0;i<ROW;i++) {
+            for (int j = 0; j<ROW; j++) {
+                //마지막 거라면 표시하고 아니라면 X로 대체 if문
+            }
         }
     }
 }

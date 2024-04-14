@@ -11,20 +11,19 @@ public class Stack {
     static void Stack(){
 
     }
-    void dealer(){
-        CardDeck cd=new CardDeck();
-        cardspot=new ArrayList<>();
-        for(int i=1;i<=ROW;i++){
-            cards=new ArrayList<>();
-            for(int j=0;j<i;j++) {
+    void dealer() {
+        CardDeck cd = new CardDeck();
+        cardspot = new ArrayList<>();
+        for (int i = 1; i <= ROW; i++) {
+            cards = new ArrayList<>();
+            for (int j = 0; j < i; j++) {
                 cards.add(cd.drawCard());
-            }cardspot.add(cards);
-        }
-        for(int i=0;i<ROW;i++) {
-            for (int j = 0; j<ROW; j++) {
-                //마지막 거라면 표시하고 아니라면 X로 대체 if문
             }
         }
+        cardspot.add(cards);
+    }
+    void printCard(){
+     //if문을 사용해서 마지막 장 이외의 건 다 X
     }
 }
 
